@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      SMS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">SMS Page</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-row>
+      <ion-grid>
+        <ion-item>
+            <ion-label position="stacked">Nombre</ion-label>
+            <ion-input type="text" placeholder="Ingrese su nombre" [(ngModel)]="nombre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Primer apellido</ion-label>
+          <ion-input type="text" placeholder="Ingrese su primer apellido" [(ngModel)]="paterno"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Segundo apellido</ion-label>
+          <ion-input type="text" placeholder="Ingrese su segundo apellido" [(ngModel)]="materno"></ion-input>
+        </ion-item>
+
+        <ion-item>
+
+          <ion-button color="primary" (click)="imprimir()">Aumentar envío</ion-button>
+          <h2 style="color:red;">{{contador}}</h2>
+        </ion-item>
+        
+      <ion-item>
+        <h6>Resultado:</h6>
+      </ion-item>
+      
+  </ion-grid>
+  </ion-row>
+  <ion-row>
+    <h4>{{ nombre}} {{paterno}} {{materno}}</h4>
+
+  </ion-row>
+  <app-explore-container name="SmsPage"></app-explore-container>
+</ion-content>
