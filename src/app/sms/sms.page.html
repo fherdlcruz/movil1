@@ -30,9 +30,40 @@
         </ion-item>
 
         <ion-item>
+          <ion-label position="stacked">Género</ion-label>
+          <ion-select okText="Seleccionar" cancelText="Cancelar" [(ngModel)]="genero" interface="popover">
+            <ion-select-option value="Femenino">Femenino</ion-select-option>
+            <ion-select-option value="Masculino">Masculino</ion-select-option>
+          </ion-select>
+        </ion-item>
 
-          <ion-button color="primary" (click)="imprimir()">Aumentar envío</ion-button>
-          <h2 style="color:red;">{{contador}}</h2>
+        <ion-item>
+          <ion-label position="stacked">Mascotas</ion-label>
+          <ion-select multiple="true" okText="Seleccionar" cancelText="Cancelar" [(ngModel)]="mascotas" interface="action-sheet">
+            <ion-select-option value="Gato">Gato</ion-select-option>
+            <ion-select-option value="Perro">Perro</ion-select-option>
+            <ion-select-option value="Cerdito">Cerdito</ion-select-option>
+            <ion-select-option value="Conejo">Conejo</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Idiomas</ion-label>
+          <ion-select [compareWith]="compareWith" multiple="true" okText="Seleccionar" cancelText="Cancelar" interface="alert">
+            <ion-select-option *ngFor="let idioma of listaIdiomas" [value]="idioma">{{ idioma }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">País</ion-label>
+          <ion-select okText="Seleccionar" cancelText="Cancelar" interface="popover">
+            <ion-select-option *ngFor="let p of pais" [value]="p">{{ p }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-button color="primary" (click)="edadAumentar()">Aumentar edad</ion-button>
+            <ion-button color="primary" (click)="edadRestar()">Restar edad</ion-button>
         </ion-item>
         
       <ion-item>
@@ -42,8 +73,16 @@
   </ion-grid>
   </ion-row>
   <ion-row>
-    <h4>{{ nombre}} {{paterno}} {{materno}}</h4>
-
+    <ion-grid> 
+    <h4>Nombre completo: </h4>
+    <h5>{{ nombre}} {{paterno}} {{materno}}</h5>
+    <h4>Edad: </h4>
+    <h5>{{ edad }}</h5>
+    <h4>Género: </h4>
+    <h5>{{genero}}</h5>
+    <h4>Mascotas: </h4>
+    <h5>{{mascotas}}</h5>
+  </ion-grid>
   </ion-row>
   <app-explore-container name="SmsPage"></app-explore-container>
 </ion-content>

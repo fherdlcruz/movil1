@@ -10,7 +10,11 @@ export class SmsPage implements OnInit {
   public nombre:string=""; //NOMBRE DE LA PERSONA
   public paterno:string = ""; // PRIMER APELLIDO
   public materno:string ="";// SEGUNDO APELLIDO
-
+  public edad:number = 0;
+  public genero:string='';
+  public mascotas:any;
+  public listaIdiomas = ['INGLES', 'FRANCES','ESPAÑOL','ALEMAN','PORTUGUES'];
+  public pais = ['MEXICO', 'USA','GUATEMALA','SALVADOR']
   //CONSTRUCTOR DE LA CLASE
   constructor() { }
 
@@ -23,4 +27,15 @@ export class SmsPage implements OnInit {
   imprimir (): void {
     this.contador += 1;
   }
+
+  //Aumentar edad
+  edadAumentar(){
+    this.edad +=1;
+  }
+
+  //Restar edad
+  edadRestar(){
+    this.edad -=1;
+  }
+
 }
