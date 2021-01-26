@@ -1,0 +1,15 @@
+[
+    {
+        "username" : "fernando",
+        "password" : "12345a",
+        "name":"Fernando",
+        "last_name": "Hernandez de la Cruz"
+    },
+    {
+        
+        "username" : "gabriela",
+        "password" : "12345a",
+        "name":"Gabriela",
+        "last_name": "Dionicio Cordova"
+    }
+]

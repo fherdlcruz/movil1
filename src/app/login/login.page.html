@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-grid>
+      <ion-col size="12">
+        <img src="/assets/logo_itvh.png" alt="">
+      </ion-col>
+    </ion-grid>
+  </ion-row>
+  <ion-row>
+    <ion-grid>
+      <ion-col size="12">
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Usuario</ion-label>
+            <ion-input type="text" placeholder="@"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Contraseña</ion-label>
+            <ion-input type="password" placeholder="******"></ion-input>
+          </ion-item>
+
+          <ion-item class="text-center">
+            <ion-button color="primary" (click)="iniciarSesion();">Iniciar sesión</ion-button>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-grid>
+  </ion-row>
+</ion-content>

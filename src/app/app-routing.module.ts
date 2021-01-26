@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'sms',
     loadChildren: () => import('./sms/sms.module').then( m => m.SmsPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
 ];
 @NgModule({
