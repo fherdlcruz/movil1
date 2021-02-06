@@ -5,6 +5,18 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthProvider } from 'src/providers/auth';
 
+import * as firebase from 'firebase/app';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAGxNuFgZgaH4VrFKiB5Tv2l-vS6E1VzzE",
+  authDomain: "itvh-m2.firebaseapp.com",
+  projectId: "itvh-m2",
+  storageBucket: "itvh-m2.appspot.com",
+  messagingSenderId: "236629084229",
+  appId: "1:236629084229:web:6b7dd17dbb2731c6c6fb2c",
+  measurementId: "G-KRCYJ78S78"
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -35,5 +47,7 @@ export class AppComponent {
         this.navCtrl.navigateRoot('/login',{animated:true, animationDirection:'forward'});
       }
     });
+
+    firebase.default.initializeApp(firebaseConfig);
   }
 }
