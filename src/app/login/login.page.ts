@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoadingController, NavController } from '@ionic/angular';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +14,8 @@ export class LoginPage implements OnInit {
   constructor(
     private loadingCtrl: LoadingController,
     private navCtrl: NavController,
+    private authService:AuthService,
+    private router:Router,
   ) { }
 
   ngOnInit() {
@@ -21,11 +25,25 @@ export class LoginPage implements OnInit {
     console.log('Iniciando sesión');
     const loading = await this.loadingCtrl.create({message:'Iniciando sesión...'})
     await loading.present();
+    this.authService.loginUser(this.usuario, this.password).then((response)=>{
 
-    setTimeout(()=>{
+      console.log('- - - - -SUCCESS - - - - - -')
+      console.log(response);
+      console.log('- - - - -END SUCCESS - - - - - -')
       this.loadingCtrl.dismiss();
-      this.navCtrl.navigateRoot('/tabs/tab1');
-    },3000)
+      this.router.navigateByUrl('/tabs/tab1');
+
+    }, (error)=>{
+      console.log('- - - - -ERROR - - - - - -');
+      console.log(error);
+      console.log('- - - - -END ERROR - - - - - -');
+      this.loadingCtrl.dismiss();
+    });
+    
   }
 
+
+  goToSignup(){
+    this.router.navigateByUrl('signup');
+  }
 }

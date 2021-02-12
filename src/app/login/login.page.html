@@ -18,18 +18,22 @@
         <ion-list>
           <ion-item>
             <ion-label position="stacked">Usuario</ion-label>
-            <ion-input type="text" placeholder="@"></ion-input>
+            <ion-input type="text" placeholder="@" [(ngModel)]="usuario"></ion-input>
           </ion-item>
 
           <ion-item>
             <ion-label position="stacked">Contraseña</ion-label>
-            <ion-input type="password" placeholder="******"></ion-input>
+            <ion-input type="password" placeholder="******" [(ngModel)]="password"></ion-input>
           </ion-item>
 
           <ion-item class="text-center">
-            <ion-button color="primary" (click)="iniciarSesion();">Iniciar sesión</ion-button>
+            <ion-button color="primary" size="full" (click)="iniciarSesion();">Iniciar sesión</ion-button>
+            
           </ion-item>
-
+          <ion-item>
+            <ion-button color="secondary" (click)="goToSignup()">Registrarme</ion-button>
+          </ion-item>
+          
         </ion-list>
       </ion-col>
     </ion-grid>

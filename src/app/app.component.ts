@@ -37,6 +37,9 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      const  fb = firebase.default.initializeApp(firebaseConfig);
+      console.log("Initialize");
+      console.log(fb);
       if (this.authProvider.isAuthenticate()){
         // Si estoy logueado
         console.log('Estoy autenticado, voy hacia tabs');
@@ -47,7 +50,5 @@ export class AppComponent {
         this.navCtrl.navigateRoot('/login',{animated:true, animationDirection:'forward'});
       }
     });
-
-    firebase.default.initializeApp(firebaseConfig);
   }
 }

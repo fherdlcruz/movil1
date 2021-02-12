@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrarme</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Usuario</ion-label>
+        <ion-input type="text" placeholder="@" [(ngModel)]="usuario"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Contraseña</ion-label>
+        <ion-input type="password" placeholder="******" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <ion-item class="text-center">
+        <ion-button color="primary" size="full" (click)="signUpUser();">Registrarme</ion-button>
+        
+      </ion-item>
+    </ion-list>
+  </ion-row>
+</ion-content>
